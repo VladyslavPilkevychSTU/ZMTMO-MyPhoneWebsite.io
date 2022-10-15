@@ -6,14 +6,13 @@ a {
 header {
     width: 100%;
     height: 60px;
-    /* background-color: rgb(133, 132, 128, 0.5); */
-    background-color: rgb(133, 132, 128, 0.7);
+    background-color: rgb(133, 132, 128, 0.5);
     display: flex;
     vertical-align: middle;
     position: fixed;
     font-family: 'Roboto', sans-serif;
-    /* box-shadow: 0 2px 0 rgb(133, 132, 128, 0.5); */
-    box-shadow: 0 2px 0 rgb(133, 132, 128, 0.7);
+    box-shadow: 0 2px 0 rgb(133, 132, 128, 0.5);
+    z-index: 999;
 }
 
 .header-logo {
@@ -69,8 +68,8 @@ header {
 }
 ::-webkit-scrollbar-track {
     /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
-    -webkit-box-shadow: inset 0 0 6px linear-gradient(#1c1bb1 20%, #bf0640 90%);
-    background: linear-gradient(#1c1bb1 35%, #bf0640 90%);
+    -webkit-box-shadow: inset 0 0 6px linear-gradient(#D9A45D 20%, #754B1C 90%);
+    background: linear-gradient(#D9A45D 35%, #754B1C 90%);
 }
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
@@ -83,115 +82,94 @@ main {
     font-family: 'Roboto', sans-serif;
 }
 
-.section-greeting {
-    background-image: url('../images/home/bg1.jpg');
+.section-head {
+    background-image: url('../images/about/bg1.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 750px;
+    height: 650px;
     align-items: center;
     text-align: center;
     color: white;
     text-transform: uppercase;
 }
 
-.section-greeting p {
-    font-weight: 700;
-    font-size: 35px;
-    padding-top: 245px;
+.dark-bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.4);
 }
 
-.section-greeting p span {
-    color: #ce1857;
-}
-
-.section-greeting h1 {
+.section-head h1 {
     font-weight: 900;
     font-size: 95px;
-    padding-top: 20px;
+    padding-top: 250px;
 }
 
-.section-greeting h2 {
+.section-head h2 {
     font-weight: 400;
     font-size: 45px;
     text-transform: capitalize;
     padding-top: 20px;
+    font-style: italic;
 }
 
 /* =============================================== */
 
-.square-links {
-    display: flex;
+.section-about {
+    padding: 75px 15% 0 15%;
 }
 
-.square-link {
-    width: 25%;
-    height: 350px;
-    /* background-color: #B873D1; */
-    background-color: #120c34;
-    justify-self: center;
-    align-items: center;
-    text-align: center;
-    color: #db21a3;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-.square-link:nth-child(2n) {
-    /* background-color: #D64894; */
-    background-color: #db21a3;
-    color: #120c34;
-}
-
-.square-link img {
-    height: 100px;
-    padding-top: 85px;
-}
-
-.square-link p {
-    margin-top: 25px;
-}
-
-/* =============================================== */
-
-.section-introduction {
-    /* height: 3000px; */
-    padding: 75px 250px;
-}
-
-.introduction-title {
+.section-about h2 {
     font-weight: 700;
     font-size: 35px;
     text-align: center;
 }
 
-.introduction-title::after {
+.section-about h2::after {
     margin: 24px auto 0 auto;
     content: '';
     display: block;
     height: 2px;
     width: 79px;
-    background-color: #db21a3;
-    box-shadow: 13px 6px 0 #db21a3;
+    background-color: #D9A45D;
+    box-shadow: 13px 6px 0 #D9A45D;
 }
 
-.introduction-text {
-    margin-top: 25px;
+.section-about p {
+    margin-top: 35px;
     font-weight: 300;
     font-size: 25px;
 }
 
-.bg-city {
-    background-image: url('../images/home/bg2.jpg');
+.section-about div {
+    display: flex;
+}
+
+.section-about div img {
+    height: 250px;
+    margin-top: 35px;
+}
+
+/* =============================================== */
+
+.section-Activities-bg {
+    background-image: url('../images/about/bg2.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    height: 450px;
-    width: 100%;
+    height: 300px;
+    margin-top: 75px;
+}
+
+.section-Activities-bg h2 {
+    font-weight: 700;
+    font-size: 55px;
+    padding-top: 125px;
+    color: white;
+    text-align: center;
 }
 
 /* =============================================== */

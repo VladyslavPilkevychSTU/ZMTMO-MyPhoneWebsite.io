@@ -69,6 +69,10 @@ main {
     padding: 75px 15% 0 15%;
 }
 
+.section-about:last-child {
+    padding-bottom: 75px;
+}
+
 .section-about h2 {
     font-weight: 700;
     font-size: 35px;
@@ -119,3 +123,9 @@ main {
     color: white;
     text-align: center;
 }
+
+/* =============================================== */
+
+/* footer {
+    margin-top: 75px;
+} */

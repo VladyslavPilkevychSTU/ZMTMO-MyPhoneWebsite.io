@@ -10,6 +10,7 @@ a {
 
 header {
     background-image: url('../images/about/bg1.jpg');
+    box-shadow: 0 2px 0 #D9A45D;
 }
 
 /* =============================================== */

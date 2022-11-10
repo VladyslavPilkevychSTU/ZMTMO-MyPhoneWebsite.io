@@ -7,6 +7,7 @@ a {
 
 header {
     background-image: url('../images/home/bg1.jpg');
+    box-shadow: 0 2px 0 #1c1bb1;
 }
 
 /* =============================================== */

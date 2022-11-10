@@ -55,8 +55,22 @@ footer {
     font-size: 25px;
 }
 
-.section-footer-links div a i:hover {
+/* .section-footer-links div a i:hover {
     color: #db21a3;
+} */
+.fa-facebook:hover {
+    color: #3b5998;
+}
+.fa-twitter:hover {
+    color: #00acee;
+}
+.fa-youtube:hover {
+    color: #FF0000;
+}
+.fa-instagram:hover {
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 footer hr {

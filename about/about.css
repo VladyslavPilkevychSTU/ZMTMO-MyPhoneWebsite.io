@@ -3,9 +3,13 @@ a {
     color: black;
 }
 
-header {
+/* header {
     background-color: rgb(133, 132, 128, 0.5);
     box-shadow: 0 2px 0 rgb(133, 132, 128, 0.5);
+} */
+
+header {
+    background-image: url('../images/about/bg1.jpg');
 }
 
 /* =============================================== */
@@ -66,7 +70,7 @@ main {
 /* =============================================== */
 
 .section-about {
-    padding: 75px 15% 0 15%;
+    padding: 75px 18% 0 18%;
 }
 
 .section-about:last-child {
@@ -92,7 +96,8 @@ main {
 .section-about p {
     margin-top: 35px;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 28px;
+    line-height: 35px;
 }
 
 .section-about div {
@@ -100,7 +105,7 @@ main {
 }
 
 .section-about div img {
-    height: 250px;
+    height: 300px;
     margin-top: 35px;
 }
 

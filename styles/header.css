@@ -2,13 +2,25 @@ header {
     width: 100%;
     height: 60px;
     /* background-color: rgb(133, 132, 128, 0.5); */
-    background-color: rgb(133, 132, 128, 0.7);
+    /* background-color: rgb(133, 132, 128, 0.7); */
     display: flex;
     vertical-align: middle;
     position: fixed;
     font-family: 'Roboto', sans-serif;
     /* box-shadow: 0 2px 0 rgb(133, 132, 128, 0.5); */
-    box-shadow: 0 2px 0 rgb(133, 132, 128, 0.7);
+    /* box-shadow: 0 2px 0 rgb(133, 132, 128, 0.7); */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.header-dark-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    vertical-align: middle;
+    background-color: rgb(133, 132, 128, 0.4);
+    box-shadow: 0 2px 0 rgb(133, 132, 128, 0.4);
 }
 
 .header-logo {
@@ -41,7 +53,7 @@ header {
 .header-link:active {
     color: #9f000f;
     box-shadow: none;
-    font-size: 25px;
+    font-size: 28px;
 }
 
 .translation {
@@ -56,4 +68,18 @@ header {
 .translation-items:hover {
     cursor: pointer;
     color: #ce1857;
+}
+
+.header-active-page {
+    color: #ce1857;
+    opacity: 0.6;
+    font-style: italic;
+}
+.header-active-page:hover {
+    cursor: default;
+    box-shadow: none;
+}
+.header-active-page:active {
+    color: #ce1857;
+    font-size: 30px;
 }

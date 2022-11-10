@@ -3,6 +3,10 @@ a {
     color: black;
 }
 
+header {
+    background-image: url('../images/services/bg1.jpg');
+}
+
 /* =============================================== */
 
 ::-webkit-scrollbar {
@@ -136,7 +140,7 @@ main {
 
 .tab-content p {
     font-weight: 300;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* =============================================== */
@@ -185,6 +189,7 @@ main {
 }
 
 .moreinfo-block p {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 22px;
+    line-height: 32px;
 }

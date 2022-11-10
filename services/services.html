@@ -17,28 +17,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
         rel="stylesheet">
-        
+
     <script src="https://kit.fontawesome.com/530c4910e5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
-        <a href="../home.html">
-            <img class='header-logo' src="../images/logo.png" alt="logo" />
-        </a>
-        <ul class="header-links">
-            <li class="header-link"><a href="../services/services.html">Services</a></li>
-            <li class="header-link">News</li>
-            <li class="header-link">Social media</li>
-            <li class="header-link">Shop</li>
-            <!-- <li class="header-link">Characteristics</li> -->
-            <li class="header-link"><a href="../about/about.html">About</a></li>
-        </ul>
-        <ul class="translation">
-            <li class="translation-items">sk</li>
-            <li class="translation-slash">/</li>
-            <li class="translation-items">en</li>
-        </ul>
+        <div class='header-dark-bg'>
+            <a href="../home.html">
+                <img class='header-logo' src="../images/logo.png" alt="logo" />
+            </a>
+            <div class="header-links">
+                <a class="header-link header-active-page">Services</a>
+                <a class="header-link" href="../news/news.html">News</a>
+                <a class="header-link">Social media</a>
+                <a class="header-link">Shop</a>
+                <a class="header-link" href="../about/about.html">About</a>
+            </div>
+            <ul class="translation">
+                <li class="translation-items">sk</li>
+                <li class="translation-slash">/</li>
+                <li class="translation-items">en</li>
+            </ul>
+        </div>
     </header>
     <main>
         <section class='section-head'>
@@ -50,10 +51,10 @@
         <section class="section-tabs">
             <h2 class="tabs-title">Our Services</h2>
             <div class="tabs-buttons">
-                <button class="tab-button active-tab-button" onClick="openCity(event,'phones')">Phones</button>
-                <button class="tab-button" onClick="openCity(event,'onlineSupport')">Online Support</button>
-                <button class="tab-button" onClick="openCity(event,'devices')">Devices</button>
-                <button class="tab-button" onClick="openCity(event,'tv')">Realme TV</button>
+                <button class="tab-button active-tab-button" onClick="openService(event,'phones')">Phones</button>
+                <button class="tab-button" onClick="openService(event,'onlineSupport')">Online Support</button>
+                <button class="tab-button" onClick="openService(event,'devices')">Devices</button>
+                <button class="tab-button" onClick="openService(event,'tv')">Realme TV</button>
             </div>
             <div id="phones" class="tab-content">
                 <img src='../images/services/tab-phone.png' />
@@ -186,8 +187,8 @@
     </footer>
 
     <script>
-        function openCity(evt, cityName) {
-            var i, x, tablinks;
+        function openService(event, serviceName) {
+            let i, x, tablinks;
             x = document.getElementsByClassName("tab-content");
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
@@ -196,8 +197,8 @@
             for (i = 0; i < x.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active-tab-button", "");
             }
-            document.getElementById(cityName).style.display = "flex";
-            evt.currentTarget.className += " active-tab-button";
+            document.getElementById(serviceName).style.display = "flex";
+            event.currentTarget.className += " active-tab-button";
         }
     </script>
 </body>

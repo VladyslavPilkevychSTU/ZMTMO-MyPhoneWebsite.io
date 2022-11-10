@@ -5,6 +5,12 @@ a {
 
 /* =============================================== */
 
+header {
+    background-image: url('../images/home/bg1.jpg');
+}
+
+/* =============================================== */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -120,10 +126,21 @@ main {
     box-shadow: 13px 6px 0 #db21a3;
 }
 
-.introduction-text {
+.introduction-container {
     margin-top: 25px;
+    display: flex;
+    gap: 10%;
+}
+
+.introduction-container img {
+    width: 400px;
+}
+
+.introduction-text {
     font-weight: 300;
-    font-size: 25px;
+    font-size: 28px;
+    line-height: 35px;
+    margin-top: 25px;
 }
 
 .bg-city {

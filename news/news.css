@@ -1,0 +1,121 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    /* background-image: url('../images/about/bg1.jpg'); */
+    background: linear-gradient(180deg,#17171c,#151631);
+}
+.header-dark-bg {
+    background: none;
+    /* box-shadow: none; */
+    box-shadow: 0 2px 0 #17171c;
+}
+.header-link {
+    color: white;
+}
+
+/* =============================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);  */
+    -webkit-box-shadow: inset 0 0 6px linear-gradient(#D9A45D 20%, #754B1C 90%);
+    background: linear-gradient(#D9A45D 35%, #754B1C 90%);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 1);
+    border-radius: 5px;
+}
+
+/* =============================================== */
+
+main {
+    font-family: 'Roboto', sans-serif;
+}
+
+.section-head {
+    background: linear-gradient(180deg,#17171c,#151631);
+    /* height: 650px; */
+    align-items: center;
+    padding-top: 8%;
+    text-align: center;
+    color: white;
+    /* text-transform: uppercase; */
+}
+
+.head-flex {
+    margin: 0 10%;
+    padding: 1%;
+    display: flex;
+    height: 100%;
+    width: 74%;
+    gap: 5%;
+}
+.head-flex img {
+    width: 60%;
+    height: 30%;
+    border-radius: 10px;
+}
+.head-flex h1 {
+    font-weight: 900;
+    text-align: left;
+    font-size: 45px;
+    /* vertical-align: middle; */
+    margin-top: 9%;
+}
+.head-flex:hover {
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #1991ff;
+}
+.head-flex:hover h1 {
+    color: #1991ff;
+}
+
+.head-flex-news {
+    display: flex;
+    padding: 5% 10%;
+    width: 80%;
+    gap: 10px;
+}
+
+.head-news-content {
+    width: 33%;
+}
+.head-news-content img {
+    max-width: 100%;
+    height: 70%;
+    border-radius: 20px;
+}
+
+.head-news-content h2 {
+    text-align: left;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 25px;
+}
+.head-news-content h3 {
+    text-align: left;
+    color: grey;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 25px;
+    bottom: 20px;
+}
+.head-news-content:hover {
+    cursor: pointer;
+}
+.head-news-content:hover h2 {
+    color: #1991ff;
+}
+
+/* =============================================== */
+
+.section-grid {
+    height: 1500px;
+}

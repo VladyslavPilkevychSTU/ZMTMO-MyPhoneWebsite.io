@@ -84,3 +84,14 @@ footer hr {
     color: grey;
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+    .section-footer-links div {
+        display: none;
+    }
+}
+@media (max-width: 456px) {
+    .section-footer-links:nth-child(1n) ul{
+        display: none;
+    }
+}

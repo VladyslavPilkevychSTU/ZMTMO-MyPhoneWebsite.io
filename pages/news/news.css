@@ -282,14 +282,22 @@ main {
 /* ==================== */
 
 @media (max-width: 768px) {
-    .section-grid {
-        grid-template-columns: 100%;
-        gap: 0;
+    .section-head {
+        margin-top: 100px;
+        height: 450px;
     }
     .head-flex {
         display: block;
     }
     .head-flex-news, .reviews {
         display: none;
+    }
+    .section-grid {
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+    .grid-items img {
+        height: 60%;
+        width: 40%;
     }
 }

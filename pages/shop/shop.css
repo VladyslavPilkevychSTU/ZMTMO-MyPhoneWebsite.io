@@ -59,3 +59,148 @@ header {
 main {
     font-family: 'Roboto', sans-serif;
 }
+
+.first-section {
+    padding: 120px 10%;
+    display: flex;
+    gap: 5%;
+}
+
+.first-section img {
+    width: 40%;
+    height: 60%;
+}
+
+.first-section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.first-section div h1 {
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.first-section div h2 {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.first-section div h2 a {
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.first-section div h2 a:hover {
+    cursor: pointer;
+    color: rgb(37, 0, 0);
+}
+
+.first-section div button {
+    margin: 0 auto;
+    padding: 25px;
+    width: 50%;
+}
+
+/* .btn {
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 27px;
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #999999;
+    background: #ffffff;
+    border: 3px solid #999999;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    -webkit-transition: ease-out 0.5s;
+    -moz-transition: ease-out 0.5s;
+}
+
+.btn.btn-border-4::after,
+.btn.btn-border-4::before {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+}
+
+.btn.btn-border-4::after {
+    top: -9px;
+    left: -9px;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+
+.btn.btn-border-4::before {
+    bottom: -9px;
+    right: -9px;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.btn.btn-border-4:hover {
+    color: #222222;
+}
+
+.btn.btn-border-4:hover::after,
+.btn.btn-border-4:hover::before {
+    width: calc(100% + 15px);
+    height: calc(100% + 15px);
+    border-color: #222222;
+} */
+
+.animated-button1 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* ================================================================================================ */
+
+@media (max-width: 1024px) {
+    .first-section div h1 {
+        font-weight: 700;
+        font-size: 45px;
+    }
+    .first-section div h2 {
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
+@media (min-width: 465px) and (max-width: 768px) {
+    .first-section, .first-section div {
+        display: block;
+    }
+    .first-section img {
+        float: left;
+        margin-right: 20px;
+    }
+    .first-section div h1 {
+        font-weight: 700;
+        font-size: 35px;
+        margin: 15px;
+    }
+    .first-section div h2 {
+        font-weight: 400;
+        font-size: 18px;
+        margin: 15px;
+    }
+    .first-section div button {
+        margin: 15px;
+    }
+}
+@media (max-width: 465px) {
+    .first-section {
+        display: block;
+    }
+    .first-section img {
+        width: 80%;
+        margin: 15px auto;
+    }
+}

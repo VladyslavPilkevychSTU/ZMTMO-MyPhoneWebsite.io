@@ -101,11 +101,12 @@ main {
     line-height: 35px;
 }
 
-.section-about div {
-    display: flex;
-}
+/* .section-about div { */
+    /* display: flex; */
+/* } */
 
 .section-about div img {
+    float: left;
     height: 300px;
     margin-top: 35px;
 }
@@ -130,8 +131,36 @@ main {
     text-align: center;
 }
 
-/* =============================================== */
 
-/* footer {
-    margin-top: 75px;
-} */
+/* ================================================================================================================== */
+
+@media (max-width: 768px) {
+    .section-head {
+        height: 500px;
+    }
+    .section-head h1 {
+        font-weight: 700;
+        font-size: 55px;
+        padding-top: 200px;
+    }
+    .section-head h2 {
+        font-size: 35px;
+    }  
+    .section-about {
+        padding: 75px 8% 0 8%;
+    }  
+    .section-about div img {
+        width: 80%;
+        height: 80%;
+        margin: 10px auto;
+        float: none;
+    }
+}
+
+@media (max-width: 426px) {
+    .section-about p {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+    }
+}

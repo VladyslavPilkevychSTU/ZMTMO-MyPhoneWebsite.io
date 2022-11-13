@@ -164,4 +164,36 @@ main {
     .square-link {
         width: 50%;
     }
+    .section-greeting {
+        height: 600px;
+    }
+    .section-greeting p {
+        font-weight: 400;
+        font-size: 25px;
+        padding-top: 200px;
+    }
+    .section-greeting h1 {
+        font-weight: 700;
+        font-size: 55px;
+    }
+    .section-greeting h2 {
+        font-weight: 300;
+        font-size: 35px;
+    }
+    .introduction-container {
+        display: inline-block;
+    }
+    .introduction-container img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 426px) {
+    .introduction-text {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .square-link {
+        width: 100%;
+    }
 }

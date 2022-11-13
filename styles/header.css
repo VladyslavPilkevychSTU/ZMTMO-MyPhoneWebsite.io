@@ -32,6 +32,7 @@ header {
 
 .header-links {
     display: flex;
+    flex-wrap: wrap;
     /* width: calc(100% - 90px); */
     width: calc(100% - 160px);
     justify-content: space-evenly;
@@ -83,4 +84,56 @@ header {
 .header-active-page:active {
     color: #ce1857;
     font-size: 30px;
+}
+
+@media (max-width: 950px) {
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .header-links {
+        width: calc(100% - 50px);
+    }
+    .translation {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+    }
+    .header-links {
+        gap: 15px;
+        font-size: 24px;
+    }
+}
+@media (max-width: 640px) {
+    header {
+        height: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .header-logo {
+        margin-top: 5%;
+    }
+}
+@media (max-width: 426px) {
+    header {
+        height: 130px;
+        /* position: static; */
+        /* position: absolute;
+        top: 0;
+        left: 0; */
+    }
+    .header-logo {
+        margin-top: 5%;
+    }
+    .header-links {
+        font-size: 20px;
+    }
+    .translation {
+        display: none;
+    }
 }

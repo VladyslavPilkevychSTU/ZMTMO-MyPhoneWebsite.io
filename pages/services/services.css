@@ -180,15 +180,20 @@ main {
 
 .moreinfo-block {
     margin-top: 75px;
-    display: flex;
-    gap: 40px;
+    /* display: flex; */
+    gap: 5%;
 }
 
 .moreinfo-block img {
     height: 40%;
     width: 35%;
+    float: left;
+    margin: 10px;
     /* max-height: 400px;
     max-width: 400px; */
+}
+.moreinfo-block:nth-child(2n) img {
+    float: right;
 }
 
 .moreinfo-block p {
@@ -200,6 +205,18 @@ main {
 /* ================================================================================================================== */
 
 @media (max-width: 768px) {
+    .section-head {
+        height: 500px;
+    }
+    .section-head h1 {
+        font-weight: 700;
+        font-size: 55px;
+        padding-top: 200px;
+    }
+    .section-head h2 {
+        font-weight: 400;
+        font-size: 35px;
+    }
     .moreinfo-block {
         display: inline-block;
     }
@@ -209,5 +226,13 @@ main {
     }
     .section-tabs, .section-moreinfo-bg {
         display: none;
+    }
+}
+
+@media (max-width: 426px) {
+    .moreinfo-block p {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
     }
 }

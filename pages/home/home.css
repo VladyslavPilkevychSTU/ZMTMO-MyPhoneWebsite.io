@@ -90,9 +90,16 @@ main {
     cursor: pointer;
 }
 
+.square-link a {
+    color: #db21a3;
+}
+
 .square-link:nth-child(2n) {
     /* background-color: #D64894; */
     background-color: #db21a3;
+    color: #120c34;
+}
+.square-link:nth-child(2n) a {
     color: #120c34;
 }
 

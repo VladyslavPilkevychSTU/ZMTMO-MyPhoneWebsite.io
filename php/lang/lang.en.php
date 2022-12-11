@@ -6,6 +6,8 @@ $Lang = array(
     "header_shop" 	=> "Shop",
     "header_about" 	=> "About",
 
+    "form_gallery" 	=> "Gallery",
+
     "section_greeting_p" 	=> "Realme is",
     "section_greeting_span" 	=> "smartphone",
     "section_greeting_h1" 	=> "We are creative",
@@ -166,5 +168,12 @@ $Lang = array(
     "sm_h2_1" 	=> "The recently released Fitbit Versa 4 smartwatch is on sale at an unbeatable holiday discount",
     "sm_h2_2" 	=> "Meta leaves Portal and smartwatches behind as it continues to focus on the metaverse",
     "sm_best_posts" 	=> "Best Posts in social media",
+
+    "form_reg" 	=> "Registration",
+    "form_name" 	=> "Name",
+    "form_email" 	=> "Email",
+    "form_phone" 	=> "Phone number",
+    "form_text" 	=> "Text",
+    "form_btn" 	=> "Send information",
 );
 ?>

@@ -38,8 +38,7 @@ include_once("php/lang/lang." . $CurentLang . ".php");
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/530c4910e5.js" crossorigin="anonymous"></script>
 </head>
@@ -51,7 +50,6 @@ include_once("php/lang/lang." . $CurentLang . ".php");
                 <img class='header-logo' src="../../images/logo.png" alt="logo" />
             </a>
             <div class="header-links">
-                <a class="header-link" href="../services/services.php"><?php echo $Lang['header_services']; ?></a>
                 <a class="header-link" href="../news/news.php"><?php echo $Lang['header_news']; ?></a>
                 <a class="header-link" href="../socialmedia/socialmedia.php"><?php echo $Lang['header_social_media']; ?></a>
                 <a class="header-link" href="../shop/shop.php"><?php echo $Lang['header_shop']; ?></a>
@@ -89,63 +87,84 @@ include_once("php/lang/lang." . $CurentLang . ".php");
                 <audio controls>
                     <source src="../../images/characteristics/It_is_realme.mp3">
                 </audio>
+                <audio controls>
+                    <source src="../../images/audio/50-cent-in-da-club.mp3">
+                </audio>
+                <audio controls>
+                    <source src="../../images/audio/audio.mp3">
+                </audio>
+            </div>
+        </section>
+        <section class="section-video">
+            <div class="video">
+                <video width="40%" height="25%" controls="controls">
+                    <source src="../../images/video/vid.MOV" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                </video>
+            </div>
+            <div class="video">
+                <video width="40%" height="25%" controls="controls">
+                    <source src="../../images/video/vid1.MOV" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                </video>
             </div>
         </section>
 
         <section class="section-form">
-            <h2 class="typical-h2">Registration</h2>
-            <form class='form' action="">
+            <h2 class="typical-h2"><?php echo $Lang['form_reg']; ?></h2>
+            <form class='form' method="POST">
                 <div class="text-field">
-                    <label class="text-field__label" for="username">Name</label>
+                    <label class="text-field__label" for="username"><?php echo $Lang['form_name']; ?></label>
                     <input class="text-field__input" type="text" name="username" id="username" placeholder="Username">
                 </div>
                 <div class="text-field">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" placeholder="Email">
+                    <label for="email"><?php echo $Lang['form_email']; ?></label>
+                    <input type="email" id="email" name="email" placeholder="Email">
                 </div>
                 <div class="text-field">
-                    <label for="phone">Phone number</label>
-                    <input type="text" id="phone" placeholder="Phone number">
+                    <label for="phone"><?php echo $Lang['form_phone']; ?></label>
+                    <input type="text" id="phone" name="phone" placeholder="Phone number">
                 </div>
-                <button class='btn btn-border-3' type='submit'>Send information</button>
+                <div class="text-field">
+                    <label for="text"><?php echo $Lang['form_text']; ?></label>
+                    <input type="text" id="text" name="text" placeholder="Text">
+                </div>
+                <button class='btn btn-border-3' type='submit'><?php echo $Lang['form_btn']; ?></button>
             </form>
         </section>
-    </main>
-    <footer>
-        <section class="section-footer-links">
-            <ul>
-                <p><a href="../services/services.php">Support</a></p>
-                <li><a href="../services/services.php">FAQ</a></li>
-                <li><a href="../services/services.php">Troubleshooting</a></li>
-                <li><a href="../services/services.php">EU Declaration</a></li>
-            </ul>
-            <ul>
-                <p><a href="../about/about.php">About realme</a></p>
-                <li><a href="../about/about.php">History</a></li>
-                <li><a href="../about/about.php">Activities</a></li>
-                <li><a href="../about/about.php">First Smartphone</a></li>
-            </ul>
-            <ul>
-                <p><a href="../services/services.php">Services</a></p>
-                <li><a href="../services/services.php">Phones</a></li>
-                <li><a href="../services/services.php">Online Support</a></li>
-                <li><a href="../services/services.php">Devices</a></li>
-                <li><a href="../services/services.php">Realme TV</a></li>
-            </ul>
-            <ul>
-                <p>Contact Realme</p>
-                <li><a href="mailto:autor@example.com">global@realme.com</a></li>
-            </ul>
-            <div>
-                <a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                <a target="_blank" href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                <a target="_blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                <a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-            </div>
+        <section class="section-form-answ">
+            <?php
+            if (isset($_POST) && $_POST['username']) {
+                $filename = "./comments.txt";
+                $data = "<div>
+                            <h3>" . $_POST['username'] . "</h3>
+                            <h4>" . $_POST['email'] . "</h4>
+                            <h4>" . $_POST['phone'] . "</h4>
+                            <p>" . $_POST['text'] . "</p>
+                        </div>";
+                $fr = fopen("comments.txt", 'r') or die("chyba");
+                $comments = fread($fr, 99999);
+                $data .= $comments;
+                $fw = fopen("comments.txt", 'w+') or die("chyba");
+                fwrite($fw, $data);
+                echo "\n" . file_get_contents("comments.txt") . "\n";
+                fclose($fr);
+                fclose($fw);
+            }
+            ?>
         </section>
-        <hr />
-        <p class='footer-c'>© 2018-2022 realme. All Rights Reserved.</p>
-    </footer>
+        <section class="section-gallery">
+            <?php foreach (glob('gallery/*') as $filename) { ?>
+                <img class="gallery" src="gallery/<?php echo basename($filename); ?>" alt="" />
+            <?php } ?>
+        </section>
+    </main>
+    <?php
+    $CurentLang = addslashes($_SESSION['NowLang']);
+    if ($CurentLang == "en") {
+        include './php/components/footer.en.php';
+    } else {
+        include './php/components/footer.sk.php';
+    }
+    ?>
 </body>
 
 </html>

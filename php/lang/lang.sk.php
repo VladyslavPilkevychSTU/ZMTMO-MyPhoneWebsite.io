@@ -6,6 +6,8 @@ $Lang = array(
     "header_shop" 	=> "Obchod",
     "header_about" 	=> "O nás",
 
+    "form_gallery" 	=> "Galéria",
+
     "section_greeting_p" 	=> "Realme je",
     "section_greeting_span" 	=> "smartfón",
     "section_greeting_h1" 	=> "Sme kreatívni",
@@ -163,5 +165,12 @@ $Lang = array(
     "sm_h2_1" 	=> "Nedávno vydané inteligentné hodinky Fitbit Versa 4 sú v predaji s bezkonkurenčnou dovolenkovou zľavou",
     "sm_h2_2" 	=> "Meta opúšťa portál a inteligentné hodinky, pretože sa naďalej zameriava na metaverze",
     "sm_best_posts" 	=> "Najlepšie príspevky v sociálnych médiách",
+
+    "form_reg" 	=> "Registrácia",
+    "form_name" 	=> "Meno",
+    "form_email" 	=> "Email",
+    "form_phone" 	=> "Telefónne číslo",
+    "form_text" 	=> "Text",
+    "form_btn" 	=> "Odoslať informácie",
 );
 ?>

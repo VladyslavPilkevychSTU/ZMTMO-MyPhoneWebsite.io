@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+@session_start();
+$LangArray = array("en", "sk");
+$DefaultLang = "en";
+if (@$_SESSION['NowLang']) {
+    if (!in_array($_SESSION['NowLang'], $LangArray)) {
+        $_SESSION['NowLang'] = $DefaultLang;
+    }
+} else {
+    $_SESSION['NowLang'] = $DefaultLang;
+}
+if (isset($_GET['lang'])) {
+    $language = addslashes($_GET['lang']);
+    if ($language) {
+        if (!in_array($language, $LangArray)) {
+            $_SESSION['NowLang'] = $DefaultLang;
+        } else {
+            $_SESSION['NowLang'] = $language;
+        }
+    }
+}
+$CurentLang = addslashes($_SESSION['NowLang']);
+include_once("php/lang/lang." . $CurentLang . ".php");
+?>
 <html lang="en">
 
 <head>
@@ -15,8 +38,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/530c4910e5.js" crossorigin="anonymous"></script>
 </head>
@@ -24,20 +46,20 @@
 <body>
     <header>
         <div class='header-dark-bg'>
-            <a href="../../home.html">
+            <a href="../../home.php">
                 <img class='header-logo' src="../../images/logo.png" alt="logo" />
             </a>
             <div class="header-links">
-                <a class="header-link" href="../services/services.html">Services</a>
-                <a class="header-link" href="../news/news.html">News</a>
-                <a class="header-link header-active-page">Social media</a>
-                <a class="header-link" href="../shop/shop.html">Shop</a>
-                <a class="header-link" href="../about/about.html">About</a>
+                <a class="header-link" href="../services/services.php"><?php echo $Lang['header_services']; ?></a>
+                <a class="header-link" href="../news/news.php"><?php echo $Lang['header_news']; ?></a>
+                <a class="header-link header-active-page"><?php echo $Lang['header_social_media']; ?></a>
+                <a class="header-link" href="../shop/shop.php"><?php echo $Lang['header_shop']; ?></a>
+                <a class="header-link" href="../about/about.php"><?php echo $Lang['header_about']; ?></a>
             </div>
             <ul class="translation">
-                <li class="translation-items">sk</li>
+                <li class="translation-items"><a href="socialmedia.php?lang=sk">sk</a></li>
                 <li class="translation-slash">/</li>
-                <li class="translation-items">en</li>
+                <li class="translation-items"><a href="socialmedia.php?lang=en">en</a></li>
             </ul>
         </div>
     </header>
@@ -45,7 +67,7 @@
 
         <section class='section-head'>
             <div class='head-flex'>
-                <h1>Watching this video might make some Americans drool over a phone they cannot buy</h1>
+                <h1><?php echo $Lang['sm_h1']; ?></h1>
                 <video width="40%" height="25%" controls="controls" poster="../../images/socialmedia/vid-poster-img.png">
                     <source src="../../images/socialmedia/video.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                 </video>
@@ -53,19 +75,19 @@
             <div class="head-flex-news">
                 <div class="head-news-content">
                     <img src="../../images/socialmedia/headimg1.jpg" alt="new1">
-                    <h2>The recently released Fitbit Versa 4 smartwatch is on sale at an unbeatable holiday discount</h2>
+                    <h2><?php echo $Lang['sm_h2_1']; ?></h2>
                     <h3>Adrian Diaconescu</h3>
                 </div>
                 <div class="head-news-content">
                     <img src="../../images/socialmedia/headimg2.jpg" alt="new1">
-                    <h2>Meta leaves Portal and smartwatches behind as it continues to focus on the metaverse</h2>
+                    <h2><?php echo $Lang['sm_h2_2']; ?></h2>
                     <h3>Dzhoro Ivanov</h3>
                 </div>
             </div>
         </section>
 
         <section class="section-posts">
-            <h2 class="h2-bn">Best Posts in social media</h2>
+            <h2 class="h2-bn"><?php echo $Lang['sm_best_posts']; ?></h2>
             <ul class="posts-container">
                 <li class="posts-item">
                     <a target="_blank" href="#">
@@ -217,23 +239,23 @@
     <footer>
         <section class="section-footer-links">
             <ul>
-                <p><a href="../services/services.html">Support</a></p>
-                <li><a href="../services/services.html">FAQ</a></li>
-                <li><a href="../services/services.html">Troubleshooting</a></li>
-                <li><a href="../services/services.html">EU Declaration</a></li>
+                <p><a href="../services/services.php">Support</a></p>
+                <li><a href="../services/services.php">FAQ</a></li>
+                <li><a href="../services/services.php">Troubleshooting</a></li>
+                <li><a href="../services/services.php">EU Declaration</a></li>
             </ul>
             <ul>
-                <p><a href="../about/about.html">About realme</a></p>
-                <li><a href="../about/about.html">History</a></li>
-                <li><a href="../about/about.html">Activities</a></li>
-                <li><a href="../about/about.html">First Smartphone</a></li>
+                <p><a href="../about/about.php">About realme</a></p>
+                <li><a href="../about/about.php">History</a></li>
+                <li><a href="../about/about.php">Activities</a></li>
+                <li><a href="../about/about.php">First Smartphone</a></li>
             </ul>
             <ul>
-                <p><a href="../services/services.html">Services</a></p>
-                <li><a href="../services/services.html">Phones</a></li>
-                <li><a href="../services/services.html">Online Support</a></li>
-                <li><a href="../services/services.html">Devices</a></li>
-                <li><a href="../services/services.html">Realme TV</a></li>
+                <p><a href="../services/services.php">Services</a></p>
+                <li><a href="../services/services.php">Phones</a></li>
+                <li><a href="../services/services.php">Online Support</a></li>
+                <li><a href="../services/services.php">Devices</a></li>
+                <li><a href="../services/services.php">Realme TV</a></li>
             </ul>
             <ul>
                 <p>Contact Realme</p>

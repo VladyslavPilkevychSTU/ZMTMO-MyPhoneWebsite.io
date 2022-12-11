@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+@session_start();
+$LangArray = array("en", "sk");
+$DefaultLang = "en";
+if (@$_SESSION['NowLang']) {
+    if (!in_array($_SESSION['NowLang'], $LangArray)) {
+        $_SESSION['NowLang'] = $DefaultLang;
+    }
+} else {
+    $_SESSION['NowLang'] = $DefaultLang;
+}
+if (isset($_GET['lang'])) {
+    $language = addslashes($_GET['lang']);
+    if ($language) {
+        if (!in_array($language, $LangArray)) {
+            $_SESSION['NowLang'] = $DefaultLang;
+        } else {
+            $_SESSION['NowLang'] = $language;
+        }
+    }
+}
+$CurentLang = addslashes($_SESSION['NowLang']);
+include_once("php/lang/lang." . $CurentLang . ".php");
+?>
 <html lang="en">
 
 <head>
@@ -24,50 +47,45 @@
 <body>
     <header>
         <div class='header-dark-bg'>
-            <a href="../../home.html">
+            <a href="../../home.php">
                 <img class='header-logo' src="../../images/logo.png" alt="logo" />
             </a>
             <div class="header-links">
-                <a class="header-link" href="../services/services.html">Services</a>
-                <a class="header-link" href="../news/news.html">News</a>
-                <a class="header-link" href="../socialmedia/socialmedia.html">Social media</a>
-                <a class="header-link" href="../shop/shop.html">Shop</a>
-                <a class="header-link" href="../about/about.html">About</a>
+                <a class="header-link" href="../services/services.php"><?php echo $Lang['header_services']; ?></a>
+                <a class="header-link" href="../news/news.php"><?php echo $Lang['header_news']; ?></a>
+                <a class="header-link" href="../socialmedia/socialmedia.php"><?php echo $Lang['header_social_media']; ?></a>
+                <a class="header-link" href="../shop/shop.php"><?php echo $Lang['header_shop']; ?></a>
+                <a class="header-link" href="../about/about.php"><?php echo $Lang['header_about']; ?></a>
             </div>
             <ul class="translation">
-                <li class="translation-items">sk</li>
+                <li class="translation-items"><a href="characteristics.php?lang=sk">sk</a></li>
                 <li class="translation-slash">/</li>
-                <li class="translation-items">en</li>
+                <li class="translation-items"><a href="characteristics.php?lang=en">en</a></li>
             </ul>
         </div>
     </header>
     <main>
         <section class="section-del-cont">
-            <h2 class="typical-h2">Contents of delivery</h2>
+            <h2 class="typical-h2"><?php echo $Lang['section_del_cont']; ?></h2>
             <ul>
-                <li>Smartphone</li>
-                <li>Fast charging with USB Type C cable</li>
-                <li>Tray clip</li>
-                <li>Silicone Case</li>
-                <li>Instruction</li>
-                <li>Warranty card</li>
+                <li><?php echo $Lang['list_1']; ?></li>
+                <li><?php echo $Lang['list_2']; ?></li>
+                <li><?php echo $Lang['list_3']; ?></li>
+                <li><?php echo $Lang['list_4']; ?></li>
+                <li><?php echo $Lang['list_5']; ?></li>
+                <li><?php echo $Lang['list_6']; ?></li>
             </ul>
             <div class="typical-dabl-photo">
                 <img src="../../images/characteristics/01.jpg" alt="phone-img">
                 <img src="../../images/characteristics/02.jpg" alt="phone-img">
             </div>
-            <p class='text-p'>Moreover, if other companies simplify the flagships so that the resulting models of the
-                middle segment do not compete with them, then realme went from the opposite. The flagship of the company
-                is needed for prestige, but they plan to make the main sales at the expense of the GT Master Edition in
-                the middle segment. Therefore, in this model they left exactly the same screen, almost the same battery
-                and fast charging, the same set of cameras (by the way, it looks weak in the flagship, but it is very
-                appropriate here). We simplified the processor, but it's still a model with excellent performance.</p>
+            <p class='text-p'><?php echo $Lang['typical_d_text']; ?></p>
             <div class="typical-dabl-photo">
                 <img src="../../images/characteristics/11.jpg" alt="phone-img">
                 <img src="../../images/characteristics/12.jpg" alt="phone-img">
             </div>
             <div style='display: flex; flex-direction: column; gap: 20px;margin: 40px 0 0;'>
-                <h2 class="typical-h2">Audio (It is realme)</h2>
+                <h2 class="typical-h2"><?php echo $Lang['audio_1']; ?></h2>
                 <audio controls>
                     <source src="../../images/characteristics/It_is_realme.mp3">
                 </audio>
@@ -96,23 +114,23 @@
     <footer>
         <section class="section-footer-links">
             <ul>
-                <p><a href="../services/services.html">Support</a></p>
-                <li><a href="../services/services.html">FAQ</a></li>
-                <li><a href="../services/services.html">Troubleshooting</a></li>
-                <li><a href="../services/services.html">EU Declaration</a></li>
+                <p><a href="../services/services.php">Support</a></p>
+                <li><a href="../services/services.php">FAQ</a></li>
+                <li><a href="../services/services.php">Troubleshooting</a></li>
+                <li><a href="../services/services.php">EU Declaration</a></li>
             </ul>
             <ul>
-                <p><a href="../about/about.html">About realme</a></p>
-                <li><a href="../about/about.html">History</a></li>
-                <li><a href="../about/about.html">Activities</a></li>
-                <li><a href="../about/about.html">First Smartphone</a></li>
+                <p><a href="../about/about.php">About realme</a></p>
+                <li><a href="../about/about.php">History</a></li>
+                <li><a href="../about/about.php">Activities</a></li>
+                <li><a href="../about/about.php">First Smartphone</a></li>
             </ul>
             <ul>
-                <p><a href="../services/services.html">Services</a></p>
-                <li><a href="../services/services.html">Phones</a></li>
-                <li><a href="../services/services.html">Online Support</a></li>
-                <li><a href="../services/services.html">Devices</a></li>
-                <li><a href="../services/services.html">Realme TV</a></li>
+                <p><a href="../services/services.php">Services</a></p>
+                <li><a href="../services/services.php">Phones</a></li>
+                <li><a href="../services/services.php">Online Support</a></li>
+                <li><a href="../services/services.php">Devices</a></li>
+                <li><a href="../services/services.php">Realme TV</a></li>
             </ul>
             <ul>
                 <p>Contact Realme</p>

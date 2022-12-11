@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+@session_start();
+$LangArray = array("en", "sk");
+$DefaultLang = "en";
+if (@$_SESSION['NowLang']) {
+    if (!in_array($_SESSION['NowLang'], $LangArray)) {
+        $_SESSION['NowLang'] = $DefaultLang;
+    }
+} else {
+    $_SESSION['NowLang'] = $DefaultLang;
+}
+if (isset($_GET['lang'])) {
+    $language = addslashes($_GET['lang']);
+    if ($language) {
+        if (!in_array($language, $LangArray)) {
+            $_SESSION['NowLang'] = $DefaultLang;
+        } else {
+            $_SESSION['NowLang'] = $language;
+        }
+    }
+}
+$CurentLang = addslashes($_SESSION['NowLang']);
+include_once("php/lang/lang." . $CurentLang . ".php");
+?>
 <html lang="en">
 
 <head>
@@ -25,20 +48,20 @@
 <body>
     <header>
         <div class='header-dark-bg'>
-            <a href="../../home.html">
+            <a href="../../home.php">
                 <img class='header-logo' src="../../images/logo.png" alt="logo" />
             </a>
             <div class="header-links">
-                <a class="header-link" href="../services/services.html">Services</a>
-                <a class="header-link" href="../news/news.html">News</a>
-                <a class="header-link" href="../socialmedia/socialmedia.html">Social media</a>
-                <a class="header-link header-active-page">Shop</a>
-                <a class="header-link" href="../about/about.html">About</a>
+                <a class="header-link" href="../services/services.php"><?php echo $Lang['header_services']; ?></a>
+                <a class="header-link" href="../news/news.php"><?php echo $Lang['header_news']; ?></a>
+                <a class="header-link" href="../socialmedia/socialmedia.php"><?php echo $Lang['header_social_media']; ?></a>
+                <a class="header-link header-active-page"><?php echo $Lang['header_shop']; ?></a>
+                <a class="header-link" href="../about/about.php"><?php echo $Lang['header_about']; ?></a>
             </div>
             <ul class="translation">
-                <li class="translation-items">sk</li>
+                <li class="translation-items"><a href="shop.php?lang=sk">sk</a></li>
                 <li class="translation-slash">/</li>
-                <li class="translation-items">en</li>
+                <li class="translation-items"><a href="shop.php?lang=en">en</a></li>
             </ul>
         </div>
     </header>
@@ -46,16 +69,15 @@
         <section class="first-section">
             <img src="../../images/GT-Master.png" alt="phone-photo">
             <div>
-                <h1>Realme GT Master Edition 5G 6GB/128GB</h1>
-                <h2>This phone has it all. A first-class camera and endless performance supported by fast charging and a
-                    large display on which you can enjoy movies and games. <a href="../characteristics/characteristics.html">Read More...</a></h2>
+                <h1><?php echo $Lang['shop_h1']; ?></h1>
+                <h2><?php echo $Lang['shop_h2']; ?> <a href="../characteristics/characteristics.php"><?php echo $Lang['shop_a']; ?></a></h2>
                 <!-- <button class='btn btn-border-4'>Buy Online</button> -->
                 <a href="#" class="animated-button1">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                    Buy Online
+                    <?php echo $Lang['shop_btn_buy']; ?>
                 </a>
             </div>
         </section>
@@ -63,23 +85,23 @@
     <footer>
         <section class="section-footer-links">
             <ul>
-                <p><a href="../services/services.html">Support</a></p>
-                <li><a href="../services/services.html">FAQ</a></li>
-                <li><a href="../services/services.html">Troubleshooting</a></li>
-                <li><a href="../services/services.html">EU Declaration</a></li>
+                <p><a href="../services/services.php">Support</a></p>
+                <li><a href="../services/services.php">FAQ</a></li>
+                <li><a href="../services/services.php">Troubleshooting</a></li>
+                <li><a href="../services/services.php">EU Declaration</a></li>
             </ul>
             <ul>
-                <p><a href="../about/about.html">About realme</a></p>
-                <li><a href="../about/about.html">History</a></li>
-                <li><a href="../about/about.html">Activities</a></li>
-                <li><a href="../about/about.html">First Smartphone</a></li>
+                <p><a href="../about/about.php">About realme</a></p>
+                <li><a href="../about/about.php">History</a></li>
+                <li><a href="../about/about.php">Activities</a></li>
+                <li><a href="../about/about.php">First Smartphone</a></li>
             </ul>
             <ul>
-                <p><a href="../services/services.html">Services</a></p>
-                <li><a href="../services/services.html">Phones</a></li>
-                <li><a href="../services/services.html">Online Support</a></li>
-                <li><a href="../services/services.html">Devices</a></li>
-                <li><a href="../services/services.html">Realme TV</a></li>
+                <p><a href="../services/services.php">Services</a></p>
+                <li><a href="../services/services.php">Phones</a></li>
+                <li><a href="../services/services.php">Online Support</a></li>
+                <li><a href="../services/services.php">Devices</a></li>
+                <li><a href="../services/services.php">Realme TV</a></li>
             </ul>
             <ul>
                 <p>Contact Realme</p>
